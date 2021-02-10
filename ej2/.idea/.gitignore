@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# CodeStream ignored files
+/../../ej2\.idea/codestream.xml
+# Datasource local storage ignored files
+/../../../../../../:\prg2020\UNED 2021\ejercicios\ej2\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

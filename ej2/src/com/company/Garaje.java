@@ -1,7 +1,9 @@
 package com.company;
 
 public class Garaje {
+    int plantas = 5;
     int plazas = 65;
+
 
     public Garaje(){
 
@@ -9,6 +11,7 @@ public class Garaje {
     public void pintarGaraje( boolean leyenda){
         if (leyenda){
             //mostrar garaje pintado
+
         }
     }
     public int entradaCoches ( int aleatorio) {

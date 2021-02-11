@@ -4,6 +4,14 @@ import java.util.*;
 
 class Driver {
     public static void main(String[] arg) {
+        //pruebas
+        System.out.println("--PRUEBAS--");
+        Sotano s = new Sotano();
+        String[] sotanoPlazas = s.getPlazas();
+        //[Ljava.lang.String;@6d03e736
+        System.out.println(sotanoPlazas);
+
+        System.out.println("--PRUEBAS--");
 		/* Asignamos al tipo leyenda true porque queremos que nos pinte la
 		   cadena Garaje vac�o que es lo primero que vamos a mostrar*/
         boolean leyenda = true;

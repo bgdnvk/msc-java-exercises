@@ -8,8 +8,7 @@ class Driver {
         System.out.println("--PRUEBAS--");
         Sotano s = new Sotano();
         String[] sotanoPlazas = s.getPlazas();
-        //[Ljava.lang.String;@6d03e736
-        System.out.println(sotanoPlazas);
+        System.out.println(Arrays.toString(sotanoPlazas));
 
         System.out.println("--PRUEBAS--");
 		/* Asignamos al tipo leyenda true porque queremos que nos pinte la

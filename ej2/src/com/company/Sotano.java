@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Sotano {
     String[] coloresArr = {"ROJO", "AZUL", "AMARILLO", "VERDE"};
     String[] plazas = new String[13];
@@ -17,11 +19,12 @@ public class Sotano {
             }
             //System.out.println(plazas[i]);
         }
-        System.out.println(plazas);
+
+        //System.out.println(Arrays.toString(plazas));
     }
 
     //return con this o no?
     public String[] getPlazas() {
-        return this.plazas;
+        return plazas;
     }
 }

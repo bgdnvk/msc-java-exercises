@@ -5,11 +5,11 @@ public class Garaje {
     int plazas = 65;
 
     //plantas
-    Planta pSotano = new Planta("Sotano");
-    Planta p0 = new Planta("0");
-    Planta p1 = new Planta("1");
-    Planta p2 = new Planta("2");
-    Planta p3 = new Planta("3");
+    Planta pSotano = new Planta("Sotano", 0);
+    Planta p0 = new Planta("0", 0);
+    Planta p1 = new Planta("1", 0);
+    Planta p2 = new Planta("2", 0);
+    Planta p3 = new Planta("3", 13);
 
     public Garaje(){
 

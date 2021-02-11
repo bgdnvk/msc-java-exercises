@@ -6,7 +6,7 @@ class Driver {
     public static void main(String[] arg) {
         //pruebas
         System.out.println("--PRUEBAS--");
-        Planta s = new Planta("sotano prueba");
+        Planta s = new Planta("sotano prueba", 0);
         String[] sotanoPlazas = s.getPlazas();
         System.out.println(Arrays.toString(sotanoPlazas));
 

@@ -14,6 +14,7 @@ public class Garaje {
     public Garaje(){
 
     }
+    //pintar con deepToString
     public void pintarGaraje( boolean leyenda){
         if (leyenda){
             //mostrar garaje pintado

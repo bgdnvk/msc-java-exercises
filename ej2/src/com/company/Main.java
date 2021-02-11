@@ -6,11 +6,13 @@ class Driver {
     public static void main(String[] arg) {
         //pruebas
         System.out.println("--PRUEBAS--");
-        Sotano s = new Sotano();
+        Planta s = new Planta("sotano prueba");
         String[] sotanoPlazas = s.getPlazas();
         System.out.println(Arrays.toString(sotanoPlazas));
 
+        System.out.println(s.getNombre());
         System.out.println("--PRUEBAS--");
+        //pruebas ---------
 		/* Asignamos al tipo leyenda true porque queremos que nos pinte la
 		   cadena Garaje vac�o que es lo primero que vamos a mostrar*/
         boolean leyenda = true;

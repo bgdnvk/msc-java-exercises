@@ -2,12 +2,13 @@ package com.company;
 
 import java.util.Arrays;
 
-public class Sotano {
+public class Planta {
     String[] coloresArr = {"ROJO", "AZUL", "AMARILLO", "VERDE"};
     String[] plazas = new String[13];
+    String nombre;
 
-    public Sotano(){
-
+    public Planta(String nombre){
+        this.nombre = nombre;
         int temp = 0;
         for(int i = 0; i < plazas.length; i++){
             if(temp >= 0 && temp < 3){
@@ -26,5 +27,9 @@ public class Sotano {
     //return con this o no?
     public String[] getPlazas() {
         return plazas;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

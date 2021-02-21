@@ -40,6 +40,20 @@ public class Garaje {
     }
 
     public void verGaraje(){
+
+        /*
+        System.out.println("********verGaraje ");
+        String list = garajeList.toString();
+        //System.out.println(list);
+
+        garajeList.get(0).verPlanta();
+        System.out.println(garajeList.get(0).toString());
+
+
+        System.out.println("***********verGaraje ");
+        */
+
+
         for(int i = 0; i < garajeList.size(); i++){
             System.out.println(garajeList.get(i));
             garajeList.get(i).verPlanta();

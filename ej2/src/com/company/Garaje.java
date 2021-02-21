@@ -72,6 +72,8 @@ public class Garaje {
         System.out.println("plantasLlenas "+plantasLlenas);
         System.out.println("sobra "+sobra);
         //se llenan todas las plantas full
+
+        //TODO: los nº de los coches deben corresponder a los coches en general, no x planta
         for (int i = 0; i < plantasLlenas; i++){
             this.garajeList.get(i).setCochesAparcados(13);
 

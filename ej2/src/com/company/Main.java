@@ -13,7 +13,7 @@ class Driver {
         //System.out.println(s.getNombre());
 
         Garaje pr = new Garaje();
-        pr.crearGaraje(45);
+        pr.crearGaraje(60);
         pr.verGaraje();
 
         //System.out.println(Arrays.toString(pr.plantasPintar(60)));

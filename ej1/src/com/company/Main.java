@@ -51,6 +51,9 @@ public class Main {
 
         //streams
         //backticks in java? ex ` text${arg} text`
+        System.out.println();
+
+
         System.out.println("---STREAMS---");
         Stream stream = objStack.stream();
         Stream stream2 = objStack.stream();

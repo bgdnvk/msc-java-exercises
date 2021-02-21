@@ -3,6 +3,8 @@ package com.company;
 public class Plaza {
     int coche;
     String color;
+
+
     public Plaza(int coche, String color){
         this.coche = coche;
         this.color = color;
@@ -15,6 +17,8 @@ public class Plaza {
     public String getColor() {
         return color;
     }
+
+    //public boolean getOcupado(){}
 
     public void setCoche(int coche) {
         this.coche = coche;

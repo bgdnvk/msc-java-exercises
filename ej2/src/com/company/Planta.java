@@ -8,7 +8,7 @@ public class Planta {
     String nombre;
     int cochesAparcados;
 
-    Plaza plazaObj = new Plaza(0, "amarillo");
+    //Plaza plazaObj = new Plaza(0, "amarillo");
     Plaza plazasArr[] = new Plaza[13];
     //no se pueden hacer loops dentro de clases?
 
@@ -18,10 +18,6 @@ public class Planta {
         this.nombre = nombre;
         this.cochesAparcados = cochesAparcados;
         int temp = 0;
-
-        //this.plazasArr[0].setColor(coloresArr[0]);
-        //null pointer
-        //this.plazasArr[0].setColor("color");
 
 
         for (int i = 0; i < plazasArr.length; i++){
@@ -38,14 +34,17 @@ public class Planta {
             } else {
                 cochesAparcados--;
             }
-            System.out.println("color de plaza: "+plazasArr[i].getColor());
-            System.out.println("coche aparcado "+plazasArr[i].getCoche());
+            //System.out.println("color de plaza: "+plazasArr[i].getColor());
+            //System.out.println("coche aparcado "+plazasArr[i].getCoche());
 
         }
 
-        System.out.println("color of 0 is "+plazasArr[0].getColor());
-        System.out.println(this.plazaObj.getColor());
-        System.out.println(Arrays.toString(this.plazasArr));
+        //System.out.println("color of 0 is "+plazasArr[0].getColor());
+        //System.out.println("color of 2 is "+plazasArr[2].getColor());
+
+
+
+        //System.out.println(Arrays.toString(plazasArr));
 
 
         /*
@@ -77,6 +76,27 @@ public class Planta {
         }
             */
         //System.out.println(Arrays.toString(plazas));
+    }
+
+    //se imprimen todas las plazas con sus correspondientes colores
+
+
+    public void verPlanta(){
+        System.out.println("--- PLANTA CREADA: " +this.nombre+" ---");
+
+        for(Plaza plaza: plazasArr){
+            System.out.print("[plaza con color: "+plaza.getColor() +" y coche nº: "+plaza.getCoche()+"] ");
+        }
+        System.out.println("");
+        System.out.println("Nombre de la planta: "+this.nombre);
+    }
+
+    @Override
+    public String toString() {
+        return "Planta{" +
+                ", nombre='" + nombre + '\'' +
+                ", cochesAparcados=" + cochesAparcados +
+                '}';
     }
 
     //return con this o no?

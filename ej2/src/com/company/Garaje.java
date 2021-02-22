@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 
 public class Garaje {
-    int plantas = 5;
+    //int plantas = 5;
     int plazas = 65;
 
     //plantas
@@ -31,12 +31,12 @@ public class Garaje {
         if (leyenda){
             //mostrar garaje con coches
             System.out.println(">>>>>>>>>>>>>>>>GARAJE VACIO <<<<<<<<<<<<<<<<<<<<<<");
-            verGaraje();
+
         } else {
             //garaje sin coches
             System.out.println("_____________________GARAJE LLENO _____________________");
-            verGaraje();
         }
+        verGaraje();
     }
     public int entradaCoches ( int aleatorio) {
         crearGaraje(aleatorio);

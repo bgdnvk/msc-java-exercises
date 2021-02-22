@@ -48,9 +48,11 @@ public class Planta {
         return nombre;
     }
 
+    //se crean las plantas con las plazas, el nº de coches y sus colores
     public void setCochesAparcados(int cochesAparcados) {
-
         this.cochesAparcados = cochesAparcados;
+        //temp se usa para el ciclo de colores en el array de @coloresArr
+        //cuando llega a [2] se reinicia
         int temp = 0;
         for (int i = 0; i < plazasArr.length; i++){
             if(temp >= 0 && temp < 3){
@@ -69,6 +71,24 @@ public class Planta {
             //System.out.println("color de plaza: "+plazasArr[i].getColor());
             //System.out.println("coche aparcado "+plazasArr[i].getCoche());
 
+        }
+    }
+    //rellena la planta con los coches sobrantes que no han cabido en las plantas full
+    public void setCochesSobra( int plantas, int cochesTotal){
+        System.out.println("setcochasobraaaaaaaa");
+        //el nº del primer coche de la última planta
+        int primerCocheRellenar = plantas*13+1;
+        //temp = ciclo de colores
+        // se rellena la planta sobrante, empieza por el coche con el nº mayor
+        // cicla a través de los coches sobrantes y cuando
+        for (int i = 0, temp =0; i < plazasArr.length && cochesTotal  >= primerCocheRellenar; i++, cochesTotal--){
+            if(temp >= 0 && temp < 3){
+                this.plazasArr[i] = new Plaza(cochesTotal, coloresArr[temp]);
+                temp++;
+            } else {
+                this.plazasArr[i] = new Plaza(cochesTotal, coloresArr[temp]);
+                temp = 0;
+            }
         }
     }
 

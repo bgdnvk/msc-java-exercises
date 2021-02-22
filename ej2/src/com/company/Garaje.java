@@ -15,7 +15,7 @@ public class Garaje {
 
 
     //ArrayList<String> nombresPlantas = new ArrayList<>();
-    String[] nombresPlantas = {"Sotano", "0", "1", "2", "3"};
+    //String[] nombresPlantas = {"Sotano", "0", "1", "2", "3"};
 
     ArrayList<Planta> garajeList = new ArrayList<>();
 
@@ -29,58 +29,40 @@ public class Garaje {
     //pintar con deepToString?
     public void pintarGaraje( boolean leyenda){
         if (!leyenda){
-            //mostrar garaje pintado
+            //mostrar garaje con coches
 
         } else {
-            //garaje no pintado
+            //garaje sin coches
+            verGaraje();
         }
     }
     public int entradaCoches ( int aleatorio) {
         return aleatorio > 65? aleatorio - plazas: 0;
     }
-
+    //se imprime el garaje planta por planta en la consola
     public void verGaraje(){
-
-        /*
-        System.out.println("********verGaraje ");
-        String list = garajeList.toString();
-        //System.out.println(list);
-
-        garajeList.get(0).verPlanta();
-        System.out.println(garajeList.get(0).toString());
-
-
-        System.out.println("***********verGaraje ");
-        */
-
 
         for(int i = 0; i < garajeList.size(); i++){
             System.out.println(garajeList.get(i));
             garajeList.get(i).verPlanta();
         }
-
     }
 
     public void crearGaraje( int numCoches ){
         int plantasLlenas = plantasPintar(numCoches)[0];
         int sobra = plantasPintar(numCoches)[1];
-        //comprobar si sobran coches, al sobrar se pinta la planta adicional
-        //para los coches sobrantes
-        //int plantasUsadas = sobra > 1 ? plantasLlenas +1: plantasLlenas;
 
-        System.out.println("inside crear garaje: ");
-        System.out.println("plantasLlenas "+plantasLlenas);
-        System.out.println("sobra "+sobra);
+        System.out.println("plantasLlenas: "+plantasLlenas);
+        System.out.println("coches que sobran:  "+sobra);
         //se llenan todas las plantas full
 
-        //TODO: los nº de los coches deben corresponder a los coches en general, no x planta
-        for (int i = 0; i < plantasLlenas; i++){
-            this.garajeList.get(i).setCochesAparcados(13);
-
+        //
+        for (int i = 0, cochesPorPlanta = 13; i < plantasLlenas; i++, cochesPorPlanta+=13 ){
+            this.garajeList.get(i).setCochesAparcados(cochesPorPlanta);
         }
         //se rellena la última planta con los coches sobrantes
         if(sobra>1){
-            this.garajeList.get(plantasLlenas).setCochesAparcados(sobra);
+            this.garajeList.get(plantasLlenas).setCochesSobra( plantasLlenas, numCoches);
         }
         String list = garajeList.toString();
         System.out.println(list);
@@ -103,8 +85,5 @@ public class Garaje {
         res[1] = sobra;
         return res;
     }
-
-
-
 
 }

@@ -6,18 +6,13 @@ class Driver {
     public static void main(String[] arg) {
         //pruebas
         System.out.println("--PRUEBAS--");
-        //Planta s = new Planta("sotano prueba", 0);
-        //String[] sotanoPlazas = s.getPlazas();
-        //System.out.println(Arrays.toString(sotanoPlazas));
 
-        //System.out.println(s.getNombre());
 
+        /*
         Garaje pr = new Garaje();
-        pr.crearGaraje(60);
+        pr.crearGaraje(22);
         pr.verGaraje();
-
-        //System.out.println(Arrays.toString(pr.plantasPintar(60)));
-        //System.out.println(pr.plantasPintar(90)[0]);
+        */
         System.out.println("--PRUEBAS--");
         //pruebas ---------
 		/* Asignamos al tipo leyenda true porque queremos que nos pinte la

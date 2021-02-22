@@ -28,15 +28,18 @@ public class Garaje {
     }
     //pintar con deepToString?
     public void pintarGaraje( boolean leyenda){
-        if (!leyenda){
+        if (leyenda){
             //mostrar garaje con coches
-
+            System.out.println(">>>>>>>>>>>>>>>>GARAJE VACIO <<<<<<<<<<<<<<<<<<<<<<");
+            verGaraje();
         } else {
             //garaje sin coches
+            System.out.println("_____________________GARAJE LLENO _____________________");
             verGaraje();
         }
     }
     public int entradaCoches ( int aleatorio) {
+        crearGaraje(aleatorio);
         return aleatorio > 65? aleatorio - plazas: 0;
     }
     //se imprime el garaje planta por planta en la consola
@@ -52,11 +55,10 @@ public class Garaje {
         int plantasLlenas = plantasPintar(numCoches)[0];
         int sobra = plantasPintar(numCoches)[1];
 
-        System.out.println("plantasLlenas: "+plantasLlenas);
-        System.out.println("coches que sobran:  "+sobra);
-        //se llenan todas las plantas full
+        //System.out.println("plantasLlenas: "+plantasLlenas);
+        //System.out.println("coches que sobran:  "+sobra);
 
-        //
+        //se llenan todas las plantas full
         for (int i = 0, cochesPorPlanta = 13; i < plantasLlenas; i++, cochesPorPlanta+=13 ){
             this.garajeList.get(i).setCochesAparcados(cochesPorPlanta);
         }

@@ -18,8 +18,6 @@ public class Plaza {
         return color;
     }
 
-    //public boolean getOcupado(){}
-
     public void setCoche(int coche) {
         this.coche = coche;
     }

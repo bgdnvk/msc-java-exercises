@@ -19,8 +19,6 @@ public class Planta {
     }
 
     //se imprimen todas las plazas con sus correspondientes colores
-
-
     public void verPlanta(){
         System.out.println("--- PLANTA CREADA: " +this.nombre+" ---");
 

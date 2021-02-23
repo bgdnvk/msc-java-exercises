@@ -20,6 +20,7 @@ public class Main {
         // Se recogen los datos de la consola
         BufferedReader reader = new BufferedReader( new InputStreamReader(System.in));
 
+        //se crean los arrays para usar
         Set<Integer> integerSet1 = new HashSet<>(Arrays.asList(20, 19, 4, 5, 10, 43 , 2, 8, 9));
         Set<Integer> integerSet2 = new HashSet<>(Arrays.asList(1, 2, 5, 8, 9, 10));
 
@@ -27,7 +28,7 @@ public class Main {
         //depende del input imprimir el método indicado
         boolean exit = false;
 
-        System.out.println("el array original es: "+ integerSet1);
+        System.out.println("Estas viendo HashSet: "+ integerSet1);
         while (!exit){
             System.out.println("introduce: union, interseccion, print, hashcode, agregar o salir");
 
@@ -72,5 +73,20 @@ public class Main {
             }
         }
 
+    }
+
+    public static void verTreeMap(){
+
+    }
+
+    public static void imprimir(String input){
+
+        if (input=="hashset"){
+
+        } else if(input=="treemap"){
+
+        } else {
+
+        }
     }
 }

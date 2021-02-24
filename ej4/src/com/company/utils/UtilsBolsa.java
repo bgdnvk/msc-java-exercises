@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UtilsBolsa {
+    //se devuelve una lista con factores primos
     public static List<Integer> getPrimeFactors(int num){
 
         List<Integer> factors = new ArrayList<Integer>();

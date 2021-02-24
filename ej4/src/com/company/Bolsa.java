@@ -32,7 +32,7 @@ public class Bolsa {
     public String toString() {
 
         return "Bolsa{ " +
-                "bolsa=" + this.bolsa +
+                this.bolsa +
                 '}';
     }
 }

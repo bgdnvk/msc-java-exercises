@@ -35,8 +35,6 @@ public class GUI {
         });
 
 
-
-
         frame.add(label1);
 
         frame.add(textField);

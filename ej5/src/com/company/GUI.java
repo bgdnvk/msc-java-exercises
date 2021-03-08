@@ -26,7 +26,6 @@ public class GUI {
 
         JButton button = new JButton("click me");
         button.setBounds(200, 200, 100, 100);
-
         button.addActionListener(e -> testButtonActionListener(e, textField, label1));
 
 

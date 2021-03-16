@@ -18,6 +18,8 @@ public class main {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
+            System.out.println(resultSet);
+
             while (resultSet.next()){
                 String comercioData = "";
                 for (int i = 1; i <= 3; i++){

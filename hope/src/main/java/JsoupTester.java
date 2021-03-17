@@ -14,7 +14,11 @@ public class JsoupTester {
 //        //get rid of keywords?
 //        AbstractScrapper.getAbstractConsola(url3);
 
+
         //check that it works through console
-        ExcelReader.getExcelLinks();
+        //ExcelReader.getExcelLinks();
+
+        //check func works
+        //CreateExcel.createRows(0);
     }
 }

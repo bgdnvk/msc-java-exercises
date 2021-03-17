@@ -33,12 +33,14 @@ public class ExcelReader {
 
         workbook.close();
 
+        //TODO clean
+        //this is being used in CreateExcel
         // check which one is faster/better? for vs lambda
-        for (Hyperlink hyperlink: hyperlinkList){
-            System.out.println("calling "+hyperlink.getAddress());
-            //check the scrapper works
-            AbstractScrapper.getAbstractConsola(hyperlink.getAddress());
-        }
+//        for (Hyperlink hyperlink: hyperlinkList){
+//            System.out.println("calling "+hyperlink.getAddress());
+//            //check the scrapper works
+//            AbstractScrapper.getAbstractConsola(hyperlink.getAddress());
+//        }
         //same but w/ lambda
 //        hyperlinkList.forEach( h ->
 //        {

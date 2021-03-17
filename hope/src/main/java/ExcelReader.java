@@ -1,0 +1,53 @@
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+//https://www.callicoder.com/java-read-excel-file-apache-poi/
+
+public class ExcelReader {
+    //TODO change path?
+    public static final String SAMPLE_XLSX_FILE_PATH = "src/hope_resumen.xls";
+
+    public static void getExcelLinks() throws IOException, InvalidFormatException{
+        Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
+        //get the first and only one sheet
+        Sheet sheet = workbook.getSheetAt(0);
+        //list to store all hyperlinks, return it later maybe
+        List<Hyperlink> hyperlinkList = new ArrayList<>();
+
+        //iterate through the sheet
+        sheet.forEach(row -> {
+            row.forEach(cell -> {
+                //get the hyperlink inside the cell
+                Hyperlink hyperlink = cell.getHyperlink();
+                if (hyperlink != null){
+                    System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
+                    hyperlinkList.add(hyperlink);
+                    //TODO make new excel, insert from here if not using hyperlinklist
+                }
+
+            });
+        });
+
+        workbook.close();
+
+        // check which one is faster/better? for vs lambda
+        for (Hyperlink hyperlink: hyperlinkList){
+            System.out.println("calling "+hyperlink.getAddress());
+            //check the scrapper works
+            AbstractScrapper.getAbstractConsola(hyperlink.getAddress());
+        }
+        //same but w/ lambda
+//        hyperlinkList.forEach( h ->
+//        {
+//            try {
+//                AbstractScrapper.getAbstractConsola(h.getAddress());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        });
+    }
+
+}

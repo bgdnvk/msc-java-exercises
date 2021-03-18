@@ -7,10 +7,10 @@ import java.util.List;
 //https://www.callicoder.com/java-read-excel-file-apache-poi/
 
 public class ExcelReader {
-    //TODO change path?
-    public static final String SAMPLE_XLSX_FILE_PATH = "src/hope_resumen.xls";
+    //TODO change path? and use the proper xls
+    public static final String SAMPLE_XLSX_FILE_PATH = "src/hope_resumen_test.xls";
 
-    public static void getExcelLinks() throws IOException, InvalidFormatException{
+    public static List<Hyperlink> getExcelLinks() throws IOException, InvalidFormatException{
         Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
         //get the first and only one sheet
         Sheet sheet = workbook.getSheetAt(0);
@@ -25,7 +25,7 @@ public class ExcelReader {
                 if (hyperlink != null){
                     System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
                     hyperlinkList.add(hyperlink);
-                    //TODO make new excel, insert from here if not using hyperlinklist
+                    //TODO make new excel, insert from here if not using hyperlinklist?
                 }
 
             });
@@ -33,6 +33,8 @@ public class ExcelReader {
 
         workbook.close();
 
+        return hyperlinkList;
+        //CreateExcel.createRows(hyperlinkList);
         //TODO clean
         //this is being used in CreateExcel
         // check which one is faster/better? for vs lambda

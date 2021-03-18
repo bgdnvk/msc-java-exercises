@@ -10,59 +10,34 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class CreateExcel {
 
-//    public static void main(String[] args) throws IOException {
-//        XSSFWorkbook workbook = new XSSFWorkbook();
-//        XSSFSheet sheet = workbook.createSheet("Java Data");
-//
-//
-//        Row row = sheet.createRow(0);
-//        Cell cell = row.createCell(0);
-//        cell.setCellValue("cell0");
-//        Cell cell2 = row.createCell(2);
-//        cell2.setCellValue("cell2");
-//
-//        Row row2 = sheet.createRow(1);
-//        Cell cellInRow2 = row2.createCell(0);
-//        cellInRow2.setCellValue("cell in row2");
-//
-//        Row row3 = sheet.createRow(2);
-//        Cell cellInRow3 = row3.createCell(0);
-//        cellInRow3.setCellValue("row3");
-//
-//
-//        try (FileOutputStream outputStream = new FileOutputStream("GeneratedExcel.xlsx")) {
-//            workbook.write(outputStream);
-//        }
-//    }
-
-    //Hyperlink hyperlink
+    //create rows given a list of hyperlinks
     public static void createRows (List<Hyperlink> hyperlinkList) throws IOException{
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Java Data");
 
-
-
-        //setCell(row, "data0");
         int rows = 0;
 
         for (Hyperlink hyperlink: hyperlinkList){
             //creates a new row every time for the loop
             Row row = sheet.createRow(++rows);
-
+            //display what site you are scrapping
             System.out.println("calling "+hyperlink.getAddress());
-            //TODO return a string from scrapper
-            String scrapperInfo = AbstractScrapper.getAbstractConsola(hyperlink.getAddress());
+            //get text from the website
+            String scrappedText = AbstractScrapper.getAbstractConsola(
+                    hyperlink.getAddress());
 
             //make a new cell with the scrapped info
-            setCell(row, scrapperInfo);
+            setCell(row, scrappedText);
         }
 
-
+        //TODO change the path?
+        //make the excel
         try (FileOutputStream outputStream = new FileOutputStream("GeneratedExcel.xlsx")) {
             workbook.write(outputStream);
         }
     }
 
+    //put data into the row's cell
     public static void setCell(Row row, String data){
         //put data always in the first row
         Cell cellInRow = row.createCell(0);

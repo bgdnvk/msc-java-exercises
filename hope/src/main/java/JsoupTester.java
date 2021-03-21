@@ -25,8 +25,9 @@ public class JsoupTester {
         //-------TESTS------------
 
         //get hyperlink List from Excel Reader class
-        List<Hyperlink> hyperlinkList = ExcelReader.getExcelLinks();
+        List<Hyperlink> hyperlinkList = ExcelLinkReader.getExcelLinks();
+
         //make excel from the hyperlinks
-        CreateExcel.createRows(hyperlinkList);
+        //CreateExcel.createRows(hyperlinkList);
     }
 }

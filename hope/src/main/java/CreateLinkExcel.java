@@ -8,7 +8,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class CreateExcel {
+public class CreateLinkExcel {
 
     //create rows given a list of hyperlinks
     public static void createRows (List<Hyperlink> hyperlinkList) throws IOException{

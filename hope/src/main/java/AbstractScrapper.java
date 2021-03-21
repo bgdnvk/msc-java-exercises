@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 public class AbstractScrapper {
 
     public static String getAbstractConsola(String url) throws IOException {
+        //id get the website's element id
         String id = "enc-abstract";
 
         Document document = Jsoup.connect(url).get();

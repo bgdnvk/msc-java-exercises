@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public class AbstractScrapper {
 
-    public static String getAbstractConsola(String url) throws IOException {
+    public static String getAbstractId(String url) throws IOException {
         //id get the website's element id
         String id = "enc-abstract";
 

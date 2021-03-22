@@ -99,5 +99,9 @@ public class ExcelReader {
         workbook.close();
         return arrayList;
     }
+    //get the data from a link as a String
+    public static String getLink(String url) throws IOException {
+        return AbstractScrapper.getAbstractId(url);
+    }
 
 }

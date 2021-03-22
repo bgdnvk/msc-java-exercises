@@ -38,15 +38,20 @@ public class JsoupTester {
         System.out.println(arrayList.get(13));
         System.out.println("test finish");
 
+        //check insert
+        //--TESTS
         for (int i = 0; i < arrayList.size(); i++){
             System.out.println(i);
             System.out.println(arrayList.get(i));
             if (arrayList.get(i).equals("Resumen")){
-                arrayList.set(i+1, "set after resumen");
+                String resumenString = ExcelReader.getLink(arrayList.get(i+3));
+                arrayList.set(i+1, resumenString);
+
             }
             //System.out.println(arrayList.get(i+1));
         }
         arrayList.forEach(cell -> System.out.println(cell));
+        //--TESTS
 
 
         //make excel from the hyperlinks

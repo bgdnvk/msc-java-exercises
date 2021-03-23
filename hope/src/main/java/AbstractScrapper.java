@@ -21,13 +21,15 @@ public class AbstractScrapper {
 
         List<String> textList = new ArrayList<String>();
 
-        //System.out.println(abstractDiv);
+        //get the data from paragraphs and put it into the list
         for (Element paragraph : paragraphs) {
             //System.out.println(paragraph.text());
             textList.add(paragraph.text());
         }
-        //loop through list with data to check the data
+        //check the data
         //textList.forEach(System.out::println);
+
+        //format the list and return it as a string
         String textString = Stream.of(textList)
                 .map(Object::toString)
                 .collect(Collectors.joining("\t"));

@@ -15,7 +15,7 @@ public class CreateExcel {
     public static void createLinkExcel(List<Hyperlink> hyperlinkList) throws IOException{
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Java Data");
-
+        //rows start
         int rows = 0;
 
         for (Hyperlink hyperlink: hyperlinkList){
@@ -26,7 +26,6 @@ public class CreateExcel {
             //get text from the website
             String scrappedText = AbstractScrapper.getAbstractId(
                     hyperlink.getAddress());
-
             //make a new cell with the scrapped info
             setCell(row, scrappedText);
         }

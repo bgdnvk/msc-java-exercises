@@ -8,15 +8,16 @@ import java.util.List;
 
 public class ExcelReader {
     //TODO change path? and use the proper xls
+    //set the file to read
     public static final String xlsTest = "src/hope_resumen_test.xls";
 
-
+    //get the workbook
     public static Workbook getWorkbook(String xlsx) throws IOException, InvalidFormatException {
         Workbook workbook = WorkbookFactory.create(new File(xlsx));
         return workbook;
     }
 
-
+    //get all the hyperlinks from the excel
     public static List<Hyperlink> getExcelLinks() throws IOException, InvalidFormatException{
         Workbook workbook = getWorkbook(xlsTest);
         //get the first and only one sheet
@@ -30,24 +31,11 @@ public class ExcelReader {
         //iterate through the sheet
         sheet.forEach(row -> {
             row.forEach(cell -> {
-                // --- get specific cell value
-//                System.out.println(" ---data---");
-//                String cellValue = dataFormatter.formatCellValue(cell);
-//                System.out.println(cellValue);
-//                System.out.println(" --data---");
-//                //check specific value
-//                if(cellValue.equals("")){
-//                    System.out.println("empty");
-//                }
-//                if(cellValue.equals("medical_history:")){
-//                    System.out.print("inside IF: >"+cellValue + "\n");
-//                }
-                // ---
-
-                //get the hyperlink inside the cell
+                //get hyperlink from the cell
                 Hyperlink hyperlink = cell.getHyperlink();
+                //if hyperlink exists then add it to the list
                 if (hyperlink != null){
-                    System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
+                    //System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
                     hyperlinkList.add(hyperlink);
                     //TODO make new excel, insert from here if not using hyperlinklist?
                 }
@@ -57,40 +45,25 @@ public class ExcelReader {
         workbook.close();
         return hyperlinkList;
     }
-
+    //get all the cells from the excel
     public static ArrayList<String> getExcelCells() throws IOException, InvalidFormatException {
         Workbook workbook = getWorkbook(xlsTest);
         //get the first and only one sheet
         Sheet sheet = workbook.getSheetAt(0);
         //list to store all hyperlinks, return it later maybe
         ArrayList<String> arrayList = new ArrayList<>();
-
         // Create a DataFormatter to format and get each cell's value as String
         DataFormatter dataFormatter = new DataFormatter();
         //iterate through the sheet
         sheet.forEach(row -> {
             row.forEach(cell -> {
+                //get cell value formatted
                 String cellValue = dataFormatter.formatCellValue(cell);
-
-                // -- tests
-                // --- get specific cell value
-//                System.out.println(" ---data---");
-//                System.out.println(cellValue);
-//                System.out.println(" --data---");
-//                //check specific value
-//                if(cellValue.equals("")){
-//                    System.out.println("empty");
-//                }
-//                if(cellValue.equals("medical_history:")){
-//                    System.out.print("inside IF: >"+cellValue + "\n");
-//                }
-                //-- tests
-
+                //add the hyperlink to the arraylist from the cell w/ "articulo" names
                 if (cellValue.equals("Articulo")){
                     Hyperlink hyperlink = cell.getHyperlink();
-                    System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
+                    //System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
                     arrayList.add(hyperlink.getAddress());
-                    //do something w/ link
                 } else {
                     arrayList.add(cellValue);
                 }

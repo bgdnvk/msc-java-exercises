@@ -10,7 +10,7 @@ public class ExcelReader {
 
     //TODO change path? and use the proper xls
     //set the file to read
-    private static String excelPath = "src/hope_resumen_test2.xls";
+    private static String excelPath = "src/hope_resumen.xls";
 
     public static void setExcelPath(String path){
         ExcelReader.excelPath = path;
@@ -70,7 +70,7 @@ public class ExcelReader {
                 //add the hyperlink to the arraylist from the cell w/ "articulo" names
                 if (cellValue.equals("Articulo")){
                     Hyperlink hyperlink = cell.getHyperlink();
-                    //System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
+                    System.out.println(hyperlink.getLabel() +" agregando link "+ hyperlink.getAddress());
                     arrayList.add(hyperlink.getAddress());
                 } else {
                     arrayList.add(cellValue);

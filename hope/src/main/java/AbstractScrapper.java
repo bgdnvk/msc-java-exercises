@@ -14,11 +14,10 @@ public class AbstractScrapper {
 
     public static String getAbstractId(String url) throws IOException {
         //id get the website's element id
-        String id = "enc-abstract";
+        String cssSelect = "div[class=abstract] p";
 
         Document document = Jsoup.connect(url).get();
-        Element abstractDiv = document.getElementById(id);
-        Elements paragraphs = document.getElementsByTag("p");
+        Elements paragraphs = document.select(cssSelect);
 
         List<String> textList = new ArrayList<String>();
 

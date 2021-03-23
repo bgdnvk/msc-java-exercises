@@ -11,7 +11,7 @@ public class JsoupTester {
         //-------TESTS------------
 //        String url = "https://pubmed.ncbi.nlm.nih.gov/32378726/";
 //
-//        String scrappedTextList = AbstractScrapper.getAbstractConsola(url);
+//        String scrappedTextList = AbstractScrapper.getAbstractId(url);
 //        System.out.println(scrappedTextList);
 
 //        String url2 = "https://pubmed.ncbi.nlm.nih.gov/32198393/";
@@ -46,7 +46,6 @@ public class JsoupTester {
             if (arrayList.get(i).equals("Resumen")){
                 String resumenString = ExcelReader.getLink(arrayList.get(i+3));
                 arrayList.set(i+1, resumenString);
-
             }
             //System.out.println(arrayList.get(i+1));
         }

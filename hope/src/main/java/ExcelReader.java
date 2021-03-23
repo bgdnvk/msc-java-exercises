@@ -7,9 +7,17 @@ import java.util.List;
 //https://www.callicoder.com/java-read-excel-file-apache-poi/
 
 public class ExcelReader {
+
     //TODO change path? and use the proper xls
     //set the file to read
-    public static final String xlsTest = "src/hope_resumen_test.xls";
+    private static String excelPath = "src/hope_resumen_test2.xls";
+
+    public static void setExcelPath(String path){
+        ExcelReader.excelPath = path;
+    }
+    public static String getExcelPath(){
+        return excelPath;
+    }
 
     //get the workbook
     public static Workbook getWorkbook(String xlsx) throws IOException, InvalidFormatException {
@@ -19,7 +27,7 @@ public class ExcelReader {
 
     //get all the hyperlinks from the excel
     public static List<Hyperlink> getExcelLinks() throws IOException, InvalidFormatException{
-        Workbook workbook = getWorkbook(xlsTest);
+        Workbook workbook = getWorkbook(excelPath);
         //get the first and only one sheet
         Sheet sheet = workbook.getSheetAt(0);
         //list to store all hyperlinks, return it later maybe
@@ -47,7 +55,7 @@ public class ExcelReader {
     }
     //get all the cells from the excel
     public static ArrayList<String> getExcelCells() throws IOException, InvalidFormatException {
-        Workbook workbook = getWorkbook(xlsTest);
+        Workbook workbook = getWorkbook(excelPath);
         //get the first and only one sheet
         Sheet sheet = workbook.getSheetAt(0);
         //list to store all hyperlinks, return it later maybe

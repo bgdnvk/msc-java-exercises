@@ -21,4 +21,6 @@ public class Tests {
         //assertTrue(ExcelReader.getExcelPath().getClass().equals("class java.lang.String"));
         assertTrue(ExcelReader.getExcelPath() instanceof String);
     }
+
+
 }

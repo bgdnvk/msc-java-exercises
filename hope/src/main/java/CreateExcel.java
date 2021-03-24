@@ -63,7 +63,7 @@ public class CreateExcel {
 
         //TODO change the path?
         //make the excel
-        try (FileOutputStream outputStream = new FileOutputStream("fromArrayList.xlsx")) {
+        try (FileOutputStream outputStream = new FileOutputStream("files/out/generatedTest.xlsx")) {
             workbook.write(outputStream);
         }
     }

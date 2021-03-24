@@ -10,7 +10,8 @@ public class ExcelReader {
 
     //TODO change path? and use the proper xls
     //set the file to read
-    private static String excelPath = "src/hope_resumen.xls";
+    //private static String excelPath = "src/hope_resumen_test2.xls";
+    private static String excelPath = "files/in/hope_resumen_test2.xls";
 
     public static void setExcelPath(String path){
         ExcelReader.excelPath = path;
